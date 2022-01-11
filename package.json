@@ -10,6 +10,7 @@
   },
   "scripts": {
     "tsc": "rm -rf ./build/* && tsc",
-    "dev": "nodemon ./build/index.js"
+    "ts": "rm -rf ./build/* && tsc -w",
+    "dev": "nodemon ./build/typeDasar.js"
   }
 }
