@@ -20,4 +20,17 @@ const number1 = 6
 const number2 = 9
 const addResult = add(6, 9)
 
-console.log(`${number1} + ${number2} = ${addResult}`)
+// console.log(`${number1} + ${number2} = ${addResult}`)
+
+// default parameter value
+
+const getFullName = (firstName: string, lastName: string = 'Hidayat'): string => firstName + ' ' + lastName
+
+const firstName = 'Fauzi'
+
+// console.log(`Nama lengkap saya adalah ${getFullName(firstName)}`)
+
+// optional parameter value
+const printNumber = (val1: number, val2?: number): string => val1 + ' ' + val2
+
+console.log(printNumber(6))

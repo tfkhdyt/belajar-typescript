@@ -21,4 +21,9 @@ hero = 69
 hero = true
 hero = {} || []
 
-export {}
+// union
+let phoneNumber: number | string
+phoneNumber = '089525362625'
+phoneNumber = 62895338865375
+
+console.log(`Nomor telepon saya adalah ${phoneNumber}`)
