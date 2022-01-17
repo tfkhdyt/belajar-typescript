@@ -34,10 +34,13 @@ class Admin extends User {
   private read: boolean = true
   private write: boolean = true
   private phone: string
+  private _email: string
+  static role: string = 'admin'
 
-  constructor(name: string, age: number, phone: string) {
+  constructor(name: string, age: number, phone: string, email: string = '') {
     super(name, age)
     this.phone = phone
+    this._email = email
   }
 
   public getRole = (): { read: boolean, write: boolean } => {
@@ -52,7 +55,21 @@ class Admin extends User {
   }
 
   public getPhone = (): string => this.phone
+
+  set email(value: string) {
+    if (!value.includes('@')) 
+      throw new Error('Email tidak valid!')
+    this._email = value
+  }
+
+  get email(): string {
+    return this._email
+  }
 }
 
-const admin = new Admin('Fauzi', 8, '0895338865375')
-console.log(admin.getPhone())
+// const admin = new Admin('Fauzi', 8, '0895338865375')
+// console.log(admin.getPhone())
+
+// admin.email = 'tfkhdyt@pm.me'
+// console.log(`Email saya adalah: ${admin.email}`)
+console.log(Admin.role)
